@@ -94,7 +94,7 @@ namespace JustEat.ApplePayJS.Clients
             // your application, but it is also required to be able to use an X.509
             // certificate with a private key if the user profile is not available,
             // such as when using IIS hosting in an environment such as Microsoft Azure.
-            using var store = new X509Store(StoreName.My, StoreLocation.CurrentUser, OpenFlags.ReadOnly);
+            using var store = new X509Store(StoreName.TrustedPeople, StoreLocation.CurrentUser, OpenFlags.ReadOnly);
 
             var certificates = store.Certificates.Find(
                 X509FindType.FindByThumbprint,
